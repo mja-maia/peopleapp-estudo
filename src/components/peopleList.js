@@ -5,7 +5,8 @@ import PeopleListItem from './peopleListItem'
 const PeopleList =  props => {
 
     const items = props.peoples.map(people => {
-        return <PeopleListItem key={people.name.first} people={people} />;
+        return <PeopleListItem key={people.name.first} people={people} 
+        navigateToPeopleDetail={props.onPressItem} />;
     })
 
     return <View style={style.container}>{items}</View>;

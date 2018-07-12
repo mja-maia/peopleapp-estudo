@@ -28,7 +28,10 @@ class PeoplePage extends Component {
     render() {
         return (
             <View>
-                <PeopleList peoples={this.state.peoples} />
+                <PeopleList peoples={this.state.peoples}
+                onPressItem={ pageParams => {
+                    this.props.navigation.navigate('PeopleDetail', pageParams);
+                }} />
             </View>
         );
     }

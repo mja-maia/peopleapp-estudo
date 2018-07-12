@@ -4,22 +4,20 @@ import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native'
 import { capitalizeFirstLetter } from '../util'
 
 const PeopleListItem = props => {
-    const { people } = props 
+    const { people, navigateToPeopleDetail } = props; 
     const { first, last, title } = people.name
-    return(
-        <TouchableOpacity onPress={() => console.log(first)}>
-            <View style={style.line}>
-                <Image style={style.avatar} source={
-                    {
-                        uri: people.picture.thumbnail
-                    }
-                } />
-                <Text style={style.lineText}>
-                    {`${capitalizeFirstLetter(first)} ${capitalizeFirstLetter(last)} `}
-                </Text>
-            </View>
-        </TouchableOpacity>
-    )
+    return <TouchableOpacity onPress={() => {
+        navigateToPeopleDetail({people});
+    }}>
+				<View style={style.line}>
+					<Image style={style.avatar} source={{ uri: people.picture.thumbnail }} />
+					<Text style={style.lineText}>
+						{`${capitalizeFirstLetter(first)} ${capitalizeFirstLetter(
+							last
+						)} `}
+					</Text>
+				</View>
+			</TouchableOpacity>;
 }
 
 const style = StyleSheet.create({
