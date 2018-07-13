@@ -6,6 +6,7 @@ import { capitalizeFirstLetter } from '../util'
 const PeopleListItem = props => {
     const { people, navigateToPeopleDetail } = props; 
     const { first, last, title } = people.name
+    
     return <TouchableOpacity onPress={() => {
         navigateToPeopleDetail({people});
     }}>
