@@ -15,7 +15,7 @@ class PeopleDetailPage extends Component {
                 <Line label="Estado:" content={capitalizeFirstLetter(people.location.state)} />
                 <Line label="Tel:" content={people.phone} />
                 <Line label="Cel:" content={people.cell} />
-                <Line label="Nat:" content={people.nat} />
+                <Line label="Nacionalidade:" content={people.nat} />
             </View>
         );
     }
